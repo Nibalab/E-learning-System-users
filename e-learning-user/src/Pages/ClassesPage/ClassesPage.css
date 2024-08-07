@@ -1,0 +1,54 @@
+.classes-page {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .classes-page h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .message {
+    text-align: center;
+    margin-bottom: 20px;
+    color: green;
+  }
+  
+  .classes-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .class-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .class-item div {
+    max-width: 70%;
+  }
+  
+  .class-item button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .class-item button:hover {
+    background-color: #0056b3;
+  }
+  
