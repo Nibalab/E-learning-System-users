@@ -1,22 +1,20 @@
-// src/utils/axios.js
-
 import axios from 'axios';
-import { getToken } from './auth'; // Import the getToken function to retrieve the token
+import { getToken } from './auth'; 
 
-// Create an instance of axios with default configurations
+
 const instance = axios.create({
-  baseURL: 'http://localhost:8080', // Base URL for your backend API
+  baseURL: 'http://localhost:8080', 
   headers: {
-    'Content-Type': 'application/json', // Default content type
+    'Content-Type': 'application/json', 
   },
 });
 
-// Add a request interceptor to include the token in headers
+
 instance.interceptors.request.use(
   (config) => {
-    const token = getToken(); // Get the token from local storage
+    const token = getToken(); 
     if (token) {
-      config.headers.Authorization = `Bearer ${token}`; // Set the Authorization header
+      config.headers.Authorization = `Bearer ${token}`; 
     }
     return config;
   },

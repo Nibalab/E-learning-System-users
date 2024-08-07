@@ -1,10 +1,9 @@
-// src/pages/LoginPage/LoginPage.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../../store/slices/authSlice';
 import axios from '../../utils/axios';
 import { Link, useNavigate } from 'react-router-dom';
-import './LoginPage.css'; // Make sure to create a corresponding CSS file for styling
+import './LoginPage.css';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -17,8 +16,8 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post('/users/login', { username, password });
-      dispatch(login(response.data.token));
-      navigate('/home'); // Redirect to the home page after login
+      dispatch(login({ token: response.data.token, username })); 
+      navigate('/'); 
     } catch (err) {
       setError('Invalid credentials, please try again.');
       console.error('Login error:', err);
